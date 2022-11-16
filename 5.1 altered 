@@ -1,0 +1,15 @@
+const int button = 12; // pin number on board is 13 connecting with button
+const int led = 9; // pin number on board is 9 connecting with LED
+int buttonstate = 0;
+
+void setup() {
+ pinMode(button, INPUT); // set push button pin as input, once pushed
+ pinMode(led, OUTPUT); // set LED pin as output, lights up
+}
+
+void loop() {
+ if (digitalRead(button) == HIGH) // when the button is not pushed
+ digitalWrite(led, LOW); // switch off LED by making the voltage low
+ else // when the button is pushed
+ digitalWrite(led, HIGH); // turn LED on by making the voltage level high
+}
